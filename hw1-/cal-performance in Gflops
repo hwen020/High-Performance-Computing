@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    // Assuming you have the execution times for dgemm0 and dgemm1
+    double time_dgemm0 = 0.123;  // Replace with the actual execution time
+    double time_dgemm1 = 0.456;  // Replace with the actual execution time
+
+    // Assuming n is the size of the matrix
+    int n = 1024;  // Replace with the actual matrix size
+
+    // Calculate the number of floating-point operations
+    long long flops = 2 * (long long)n * (long long)n * (long long)n;
+
+    // Calculate the performance in Gflops
+    double performance_dgemm0 = flops / (time_dgemm0 * 1e9);
+    double performance_dgemm1 = flops / (time_dgemm1 * 1e9);
+
+    // Print the performance for both algorithms
+    printf("Performance (dgemm0): %.2f Gflops\n", performance_dgemm0);
+    printf("Performance (dgemm1): %.2f Gflops\n", performance_dgemm1);
+
+    return 0;
+}
